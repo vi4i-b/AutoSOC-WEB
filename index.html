@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AutoSOC təhlükəsizlik əməliyyatlarını mərkəzləşdirən tətbiqdir: nə edir, hansı problemləri həll edir, necə qurulur və hansı komponentlər lazımdır.">
+  <title>AutoSOC | Təhlükəsizlik Əməliyyatlarını Mərkəzləşdirən Platforma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="ambient ambient-c"></div>
+  <div class="grid-overlay"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#hero">
+      <span class="brand-mark">A</span>
+      <span class="brand-copy">
+        <strong>AutoSOC</strong>
+        <em>Təhlükəsizlik əməliyyatları platforması</em>
+      </span>
+    </a>
+
+    <nav class="site-nav">
+      <a href="#about">Haqqında</a>
+      <a href="#problems">Problemlər</a>
+      <a href="#features">İmkanlar</a>
+      <a href="#download">Yüklə</a>
+      <a href="#guide">Təlimat</a>
+      <a href="#components">Komponentlər</a>
+    </nav>
+
+    <a class="header-cta" id="headerDownloadButton" href="/download/latest">EXE Yüklə</a>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero reveal" id="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" id="heroEyebrow">Desktop Cyber Assistant</p>
+        <h1 id="heroTitle">AutoSOC AI ilə şəbəkə risklərini görün, portları idarə edin və bildirişləri dərhal alın.</h1>
+        <p class="hero-lead" id="heroLead">
+          AutoSOC AI kiçik komandalar, startaplar, tələbə layihələri və lokal administratorlar üçün hazırlanmış
+          masaüstü kibertəhlükəsizlik köməkçisidir. Tətbiq Nmap əsaslı port skanı, riskli servis analizi,
+          Windows firewall idarəsi, Telegram bildirişləri və AI izah qatını bir pəncərədə birləşdirir.
+        </p>
+
+        <div class="hero-actions">
+          <a class="primary-button" id="primaryDownloadButton" href="/download/latest">AutoSOC.exe yüklə</a>
+          <a class="secondary-button" href="#guide">İstifadə qaydası</a>
+          <a class="ghost-button" href="#components">Lazım olan alətlər</a>
+        </div>
+
+        <div class="hero-stats">
+          <article class="stat-card">
+            <span class="stat-value"><span class="count-up" data-target="1">0</span> panel</span>
+            <span class="stat-label">dashboard, risk və Telegram görünüşü bir yerdə</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-value"><span class="count-up" data-target="24">0</span>/7</span>
+            <span class="stat-label">monitorinq və bildiriş axını</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-value"><span class="count-up" data-target="6">0</span> əsas qat</span>
+            <span class="stat-label">login, skan, analiz, firewall, Telegram və AI</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-value"><span class="count-up" data-target="3">0</span> əsas axın</span>
+            <span class="stat-label">skan, bildiriş və müdaxilə</span>
+          </article>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <article class="glass-card console-card">
+          <div class="card-topline">
+            <span class="tiny-chip live-chip">Canlı görünüş</span>
+            <span class="tiny-chip" id="modeLabel">Monitorinq</span>
+          </div>
+
+          <div class="console-header">
+            <div>
+              <span class="console-kicker">İdarəetmə paneli</span>
+              <strong id="consoleTitle">Dashboard cihaz, port, risk və Telegram statusunu canlı göstərir</strong>
+            </div>
+            <div class="console-badge" id="consoleBadge">Canlı panel</div>
+          </div>
+
+          <div class="console-layout">
+            <div class="console-sidebar">
+              <button class="view-button is-active" type="button" data-view="monitor">Monitorinq</button>
+              <button class="view-button" type="button" data-view="detect">Aşkarlama</button>
+              <button class="view-button" type="button" data-view="respond">Reaksiya</button>
+            </div>
+
+            <div class="console-screen">
+              <div class="screen-metrics">
+                <article>
+                  <span>Fokus</span>
+                  <strong id="screenMetricPrimary">Open Ports + Risk</strong>
+                </article>
+                <article>
+                  <span>Status</span>
+                  <strong id="screenMetricSecondary">Real-time yenilənmə</strong>
+                </article>
+              </div>
+
+              <div class="screen-story" id="screenStory">
+                AutoSOC AI əsas dashboard-da cihaz sayını, açıq portları, risk score-u və Telegram vəziyyətini birlikdə göstərir ki, istifadəçi sistemin durumunu dərhal anlaya bilsin.
+              </div>
+
+              <div class="screen-points" id="screenPoints">
+                <span>Canlı dashboard</span>
+                <span>Telegram statusu</span>
+                <span>Risk score görünüşü</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="signal-bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </article>
+
+        <article class="floating-snippet snippet-a">
+          <p>Yükləmə</p>
+          <strong>Əsas fayl: AutoSOC.exe</strong>
+        </article>
+
+        <article class="floating-snippet snippet-b">
+          <p>İmkanlar</p>
+          <strong>Nmap, Telegram, firewall və AI bir tətbiqdə</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="trust-strip reveal">
+      <div class="trust-item">Windows masaüstü tətbiqi</div>
+      <div class="trust-item">Telegram Chat ID ilə bağlı istifadəçi axını</div>
+      <div class="trust-item">Nmap əsaslı port skanı və risk analizi</div>
+      <div class="trust-item">Firewall müdaxiləsi və AI izahı</div>
+    </section>
+
+    <section class="about reveal" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">AutoSOC nədir?</p>
+        <h2>Bu tətbiq port risklərini göstərən, təhlükəni izah edən və istifadəçiyə dərhal müdaxilə imkanı verən masaüstü təhlükəsizlik köməkçisidir.</h2>
+      </div>
+
+      <div class="about-grid">
+        <article class="panel text-panel">
+          <p>
+            AutoSOC AI əsasən lokal şəbəkələr və kiçik komandalar üçün qurulub. Tətbiq seçilmiş hədəfdə izlənən portları yoxlayır,
+            açıq və riskli servisləri göstərir, nəticəni dashboard-da xülasə edir və lazım olduqda istifadəçiyə
+            dərhal müdaxilə etmək imkanı verir.
+          </p>
+          <p>
+            Buradakı əsas fikir sadəlikdir: istifadəçi təhlükəni yalnız görmür, həm də onun niyə riskli olduğunu anlayır,
+            nəticəni Telegram-da alır və ehtiyac varsa portu Windows firewall üzərindən açıb-bağlaya bilir.
+          </p>
+        </article>
+
+        <article class="panel mini-grid-panel">
+          <article class="mini-card">
+            <span>Hədəf istifadəçilər</span>
+            <strong>Kiçik komandalar, tələbələr, startaplar və lokal adminlər</strong>
+          </article>
+          <article class="mini-card">
+            <span>Əsas ekran</span>
+            <strong>Device sayı, açıq portlar, risk score və Telegram statusu</strong>
+          </article>
+          <article class="mini-card">
+            <span>Giriş axını</span>
+            <strong>Qeydiyyat, login və 1 Telegram Chat ID = 1 hesab</strong>
+          </article>
+          <article class="mini-card">
+            <span>AI qatı</span>
+            <strong>OpenAI, Ollama və daxili ekspert fallback rejimi</strong>
+          </article>
+        </article>
+      </div>
+    </section>
+
+    <section class="problems reveal" id="problems">
+      <div class="section-heading">
+        <p class="eyebrow">Hansı problemləri həll edir?</p>
+        <h2>AutoSOC gündəlik təhlükəsizlik işində ən çox vaxt aparan və qarışıqlıq yaradan nöqtələri aradan qaldırır.</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="feature-card">
+          <span class="card-index">01</span>
+          <h3>Açıq riskli portlar gözdən qaçır</h3>
+          <p>Kiçik komandalar və lokal adminlər çox vaxt hansı portun niyə riskli olduğunu vaxtında görmür. AutoSOC AI bunu skan edib birbaşa göstərir.</p>
+        </article>
+        <article class="feature-card">
+          <span class="card-index">02</span>
+          <h3>Risk başa düşülmür</h3>
+          <p>“Port açıqdır” məlumatı çox vaxt kifayət etmir. AutoSOC AI riski izah edir və istifadəçiyə bunun nə demək olduğunu sadə dillə göstərir.</p>
+        </article>
+        <article class="feature-card">
+          <span class="card-index">03</span>
+          <h3>Reaksiya gecikir</h3>
+          <p>Təhlükə görünəndə istifadəçi ayrıca alətlərə keçməli olur. Burada isə portun açılıb-bağlanması tətbiqin içindən edilir.</p>
+        </article>
+        <article class="feature-card">
+          <span class="card-index">04</span>
+          <h3>Bildirişlər itə bilir</h3>
+          <p>İstifadəçi tətbiqin qarşısında olmayanda vacib nəticələr gözdən qaça bilər. Telegram inteqrasiyası buna sürətli çıxış verir.</p>
+        </article>
+        <article class="feature-card">
+          <span class="card-index">05</span>
+          <h3>Qeydiyyat və əlaqə qarışıq ola bilər</h3>
+          <p>Telegram Chat ID-ni hesabla bağlamaq adətən çətin görünür. AutoSOC bunu konkret və idarə olunan axınla həll edir.</p>
+        </article>
+        <article class="feature-card">
+          <span class="card-index">06</span>
+          <h3>Canlı görünüş çatışmır</h3>
+          <p>Bir çox alətdə dəyişikliklər dərhal görünmür. AutoSOC AI dashboard metriklərini real vaxtda yeniləyərək vəziyyəti daha aydın göstərir.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="features reveal" id="features">
+      <div class="section-heading">
+        <p class="eyebrow">Əsas imkanlar</p>
+        <h2>AutoSOC gündəlik təhlükəsizlik işini daha rahat, aydın və idarə olunan hala gətirmək üçün qurulub.</h2>
+      </div>
+
+      <div class="features-layout">
+        <article class="panel capability-panel">
+          <div class="panel-header-line">
+            <span class="tiny-chip">Platform imkanları</span>
+          </div>
+          <div class="capability-list">
+            <article>
+              <h3>Canlı dashboard</h3>
+              <p>Cihaz sayı, açıq portlar, risk səviyyəsi və Telegram statusu eyni anda görünür və real vaxtda yenilənir.</p>
+            </article>
+            <article>
+              <h3>Nmap + risk analizi</h3>
+              <p>SMB, RDP, FTP, Telnet və digər riskli servislər ayrıca vurğulanır və risk score formalaşdırılır.</p>
+            </article>
+            <article>
+              <h3>Firewall idarəsi və Guard</h3>
+              <p>Portları açmaq, bağlamaq və şübhəli trafiki bloklamaq üçün Windows firewall və Scapy əsaslı guard məntiqi istifadə olunur.</p>
+            </article>
+            <article>
+              <h3>Telegram və AI köməkçi</h3>
+              <p>Bildirişlər Telegram-a göndərilir, AI isə nəticələri izah edib remediation tövsiyələri verir.</p>
+            </article>
+          </div>
+        </article>
+
+        <article class="panel architecture-panel">
+          <div class="panel-header-line">
+            <span class="tiny-chip">Necə işləyir?</span>
+          </div>
+          <div class="process-line">
+            <div class="process-step">
+              <span>01</span>
+              <strong>Qeydiyyat və giriş</strong>
+              <p>İstifadəçi hesab yaradır, Telegram Chat ID-ni bağlayır və tətbiqə daxil olur.</p>
+            </div>
+            <div class="process-step">
+              <span>02</span>
+              <strong>Skan başladılır</strong>
+              <p>Nmap seçilmiş portları yoxlayır, nəticə dashboard-a ötürülür.</p>
+            </div>
+            <div class="process-step">
+              <span>03</span>
+              <strong>Risk izah olunur</strong>
+              <p>AI köməkçi və analiz qatı istifadəçiyə riskin mənasını göstərir.</p>
+            </div>
+            <div class="process-step">
+              <span>04</span>
+              <strong>Müdaxilə edilir</strong>
+              <p>Portlar bağlanır, alert Telegram-a gedir və guard şübhəli trafiki izləyir.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="download reveal" id="download">
+      <div class="section-heading">
+        <p class="eyebrow">Yükləmə və quraşdırma</p>
+        <h2>Saytda birbaşa EXE yükləmə düyməsi, sistem tələbləri və qısa quraşdırma xülasəsi var.</h2>
+      </div>
+
+      <div class="download-grid">
+        <article class="panel download-panel">
+          <div class="download-head">
+            <div>
+              <p class="eyebrow-inline">Birbaşa fayl</p>
+              <h3 id="downloadTitle">Windows üçün yükləmə</h3>
+            </div>
+            <span class="tiny-chip">.exe</span>
+          </div>
+
+          <p class="download-copy" id="downloadCopy">
+            AutoSOC-u yükləmək və işə salmaq üçün əsas fayl `AutoSOC.exe`-dir. Adi istifadəçi üçün bu fayl kifayətdir.
+          </p>
+
+          <div class="download-actions">
+            <a class="primary-button" id="downloadPanelButton" href="/download/latest">AutoSOC.exe</a>
+            <a class="secondary-button" href="#guide">Quraşdırma addımları</a>
+          </div>
+
+          <div class="guide-points">
+            <span>AutoSOC.exe</span>
+            <span>Windows üçün</span>
+            <span>Son yenilənmiş fayl</span>
+          </div>
+
+          <div class="release-meta" id="releaseMeta">Son buraxılış məlumatı yüklənir...</div>
+
+          <div class="download-note">
+            Windows firewall və bəzi şəbəkə funksiyaları üçün tətbiqi administrator hüquqları ilə başlatmaq tövsiyə olunur.
+          </div>
+        </article>
+
+        <article class="panel requirements-panel">
+          <div class="panel-header-line">
+            <span class="tiny-chip">Sistem tələbləri</span>
+          </div>
+          <ul class="check-list">
+            <li>Windows mühiti</li>
+            <li>Administrator hüquqları ilə quraşdırma</li>
+            <li>Nmap quraşdırması və PATH daxilində işlək olması</li>
+            <li>Telegram bildirişləri üçün bot token və Chat ID</li>
+            <li>AI üçün OpenAI açarı və ya lokal Ollama qurğusu</li>
+            <li>Guard/sniffing ssenariləri üçün uyğun paket capture dəstəyi</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide reveal" id="guide">
+      <div class="section-heading">
+        <p class="eyebrow">İstifadə təlimatı</p>
+        <h2>Quraşdırmadan ilk monitorinq axınına qədər bütün əsas addımlar burada verilib.</h2>
+      </div>
+
+      <div class="guide-layout">
+        <div class="guide-steps">
+          <button class="guide-button is-active" type="button" data-step="install">1. Quraşdır</button>
+          <button class="guide-button" type="button" data-step="launch">2. İlk açılış</button>
+          <button class="guide-button" type="button" data-step="connect">3. Mənbələri qoş</button>
+          <button class="guide-button" type="button" data-step="scan">4. İlk yoxlama</button>
+          <button class="guide-button" type="button" data-step="review">5. Nəticələri oxu</button>
+          <button class="guide-button" type="button" data-step="operate">6. Gündəlik istifadə</button>
+        </div>
+
+        <article class="panel guide-detail">
+          <p class="guide-label" id="guideLabel">Addım 1</p>
+          <h3 id="guideTitle">AutoSOC-u yükləyin və başladın</h3>
+          <p id="guideText">
+            Əsas fayl `AutoSOC.exe`-dir. Firewall və bəzi şəbəkə funksiyaları üçün tətbiqi administrator hüquqları ilə açmaq məsləhətdir.
+          </p>
+          <div class="guide-points" id="guidePoints">
+            <span>AutoSOC.exe</span>
+            <span>Windows mühiti</span>
+            <span>Administrator hüquqları</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="components reveal" id="components">
+      <div class="section-heading">
+        <p class="eyebrow">Lazım olan komponentlər</p>
+        <h2>AutoSOC ilə birlikdə quraşdırıla bilən və ya inteqrasiya üçün faydalı olan rəsmi alət linkləri.</h2>
+      </div>
+
+      <div class="card-grid component-grid">
+        <article class="feature-card component-card">
+          <span class="card-index">01</span>
+          <h3>Nmap</h3>
+          <p>Layihənin əsas port skan mühərrikidir. AutoSOC-da portların yoxlanması və nəticələrin formalaşması bu alətə əsaslanır.</p>
+          <a href="https://nmap.org/download.html" target="_blank" rel="noreferrer">Rəsmi yükləmə səhifəsi</a>
+        </article>
+        <article class="feature-card component-card">
+          <span class="card-index">02</span>
+          <h3>Ollama</h3>
+          <p>Lokal AI işlətmək istəyənlər üçün uyğundur. README-də `llama3.1:8b` modeli ilə birlikdə istifadə olunması göstərilir.</p>
+          <a href="https://ollama.com/download" target="_blank" rel="noreferrer">Rəsmi yükləmə səhifəsi</a>
+        </article>
+        <article class="feature-card component-card">
+          <span class="card-index">03</span>
+          <h3>Telegram</h3>
+          <p>Alert və nəticələri çat üzərindən almaq üçün Telegram tətbiqi tələb olunur.</p>
+          <a href="https://telegram.org/" target="_blank" rel="noreferrer">Rəsmi Telegram saytı</a>
+        </article>
+        <article class="feature-card component-card">
+          <span class="card-index">04</span>
+          <h3>BotFather</h3>
+          <p>Telegram bildirişləri üçün bot yaratmaq və `TELEGRAM_BOT_TOKEN` əldə etmək üçün istifadə olunur.</p>
+          <a href="https://t.me/BotFather" target="_blank" rel="noreferrer">BotFather aç</a>
+        </article>
+        <article class="feature-card component-card">
+          <span class="card-index">05</span>
+          <h3>Npcap</h3>
+          <p>Scapy və sniffing əsaslı ssenarilərdə Windows paket capture imkanlarını gücləndirmək üçün faydalı ola bilər.</p>
+          <a href="https://npcap.com/" target="_blank" rel="noreferrer">Rəsmi sayt</a>
+        </article>
+        <article class="feature-card component-card">
+          <span class="card-index">06</span>
+          <h3>Python 3.14</h3>
+          <p>Yalnız tətbiqi mənbə kodundan başlatmaq istəyənlər üçün lazımdır. EXE istifadəçiləri üçün məcburi deyil.</p>
+          <a href="https://www.python.org/downloads/windows/" target="_blank" rel="noreferrer">Rəsmi yükləmə səhifəsi</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="faq reveal" id="faq">
+      <div class="section-heading">
+        <p class="eyebrow">Tez-tez verilən suallar</p>
+        <h2>İstifadə zamanı ən çox yaranan suallara qısa və aydın cavablar.</h2>
+      </div>
+
+      <div class="faq-list">
+        <article class="faq-item is-open">
+          <button class="faq-question" type="button">AutoSOC hansı tip komanda üçün uyğundur?</button>
+          <div class="faq-answer">
+            AutoSOC AI xüsusilə kiçik komandalar, tələbə layihələri, startaplar və ayrıca SOC komandası olmayan lokal administrator mühitləri üçün uyğundur.
+          </div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-question" type="button">EXE yükləmə düyməsi necə işləyir?</button>
+          <div class="faq-answer" id="faqDownloadAnswer">
+            Əsas yükləmə düyməsi birbaşa `AutoSOC.exe` faylını açır və adi istifadə üçün məhz bu fayl nəzərdə tutulub.
+          </div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-question" type="button">AI və Telegram mütləq lazımdır?</button>
+          <div class="faq-answer">
+            Xeyr. Nmap skan üçün əsas komponentdir. Telegram yalnız bildirişlər üçün, Ollama və OpenAI isə AI izahı üçün əlavə qatdır. Heç biri yoxdursa tətbiq daxili ekspert cavab rejiminə keçə bilir.
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>AutoSOC. Yükləmə, istifadə təlimatı və lazım olan komponentlər bir yerdə.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
